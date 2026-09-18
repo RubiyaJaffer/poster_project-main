@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: black;
+}
+
+/* Full-screen video background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+/* Make the YouTube video cover the screen */
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-width: 177.78vh;
+  min-height: 100vh;
+  transform: translate(-50%, -50%);
+  border: none;
+  pointer-events: none;
+}
+
+/* Dark transparent layer over the video */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 5, 0, 0.6);
+  z-index: -1;
+}
+
+/* Center all poster content */
+.poster-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px 72px;
+}
+
+/* Small text at the top */
+.eyebrow {
+  margin: 0 0 14px;
+  color: orange;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* Main Diwali heading */
+h1 {
+  margin: 0;
+  color: orange;
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 1;
+  text-shadow: 0 3px 20px black;
+}
+
+/* Invitation text */
+.message {
+  margin: 26px 0;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  line-height: 1.6;
+  text-shadow: 0 2px 8px black;
+}
+
+/* Date, time, and location box */
+.event-details {
+  width: 340px;
+  max-width: 100%;
+  padding: 18px 24px;
+  border: 1px solid orange;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.3);
+}
+
+/* Space between lines inside the details box */
+.event-details p {
+  margin: 7px 0;
+  font-size: 1rem;
+}
+
+/* Highlight the event date */
+.event-details strong {
+  color: orange;
+}
+
+/* Footer displayed over the video at the bottom of the screen */
+.site-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-top: 1px solid rgba(255, 165, 0, 0.5);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: orange;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: white;
+}
+
+/* Changes for small mobile screens */
+@media (max-width: 480px) {
+  .poster-content {
+    padding: 32px 18px 72px;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .event-details {
+    padding: 16px;
+  }
+
+  .site-footer {
+    padding: 10px 12px;
+    font-size: 0.68rem;
+  }
+}
